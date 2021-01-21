@@ -39,7 +39,7 @@ const Login = ({ login, isAuthenticated, error }) => {
             {
                 error && (error == "Could not log in. Please check credentials and try again." || error == "An account already exists with this email. Please Log in." || "You've successfully created an account! Please check your email to activate your account to log in.") ? (
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Authentication Error: </strong> {error}
+                        <strong>Authentication: </strong> {error}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
