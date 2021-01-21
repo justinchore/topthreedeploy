@@ -29,7 +29,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
             <div class='collapse navbar-collapse' id='navbarNav'>
                 <ul class='navbar-nav'>
                     <li class='nav-item active'>
-                        <Link class='nav-link' to='/'>Home <span class='sr-only'>(current)</span></Link>
+                        <Link class='nav-link' to='#'>Home <span class='sr-only'>(current)</span></Link>
                     </li>
                     { !isAuthenticated ?
                             (

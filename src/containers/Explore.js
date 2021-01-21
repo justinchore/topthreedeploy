@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { checkAuthenticated , load_user } from '../actions/auth.js';
 
-const Explore = ({ checkAuthenticated, load_user, isAuthenticated, user }) => {
+const Explore = ({ checkAuthenticated, isAuthenticated, user }) => {
     const [lists, setLists] = useState([]);
 
     useEffect(() => {
@@ -29,6 +30,10 @@ const Explore = ({ checkAuthenticated, load_user, isAuthenticated, user }) => {
         checkAuthenticated();
         fetchData();
     }, [user]);
+
+    if (!isAuthenticated) {
+        return <Redirect to='/login'></Redirect>
+    }
 
     return ( 
         <>
