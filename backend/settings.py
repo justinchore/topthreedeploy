@@ -16,6 +16,9 @@ import os
 from datetime import timedelta
 import django_heroku
 import dj_database_url
+from environs import Env  # new
+env = Env()  # new env.read_env() # new
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -101,9 +104,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-    }
+    "default": env.dj_db_url("DATABASE_URL")
 }
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
