@@ -29,6 +29,11 @@ const Layout = (props) => {
         <div>
             <Navbar/>
             {props.children}
+            <footer class="footer">
+                <div class="container">
+                    <span class="text-muted"> by <a href="https://www.linkedin.com/in/justin-cho-2500891ba/">Justin Cho</a> | <a href="https://github.com/justinchore/topthreedeploy">Github</a></span>
+                </div>
+            </footer>
         </div>
   )
 };

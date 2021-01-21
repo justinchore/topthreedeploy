@@ -14,7 +14,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
 
     return (
         <>
-        <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <nav class='navbar navbar-expand-lg navbar-light bg-light mb-5'>
             <a class='navbar-brand' href='/'>TopThree</a>
             <button 
                 class='navbar-toggler'
