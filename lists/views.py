@@ -67,13 +67,6 @@ class OneListView(generics.RetrieveUpdateDestroyAPIView):
         selected_list.delete()
         return Response({'success': 'Question Deleted'})
 
-    def patch(self, request, pk, format=None):
-        selected_list = List.objects.get(id=pk)
-        serialized_list = ListSerializer(
-            selected_list, data=request.data, partial=True)
-        serialized_list.save()
-        return Response(serialized_list)
-
 
 class ListOwnerView(APIView):
     queryset = get_user_model().objects.all()
