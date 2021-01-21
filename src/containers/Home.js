@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Home = ({isAuthenticated, user, login}) => {
 
-    console.log(process.env.REACT_APP_API_URL);
+    console.log(process.env.DATABASE_URL);
     const sampleLogin = () => {
         login("topthreesampleuser@gmail.com", "testpass123");
     }

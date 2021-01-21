@@ -18,7 +18,7 @@ const UserLists = ({ checkAuthenticated, load_user, isAuthenticated, user }) => 
                 }
             };
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/lists/user/${user.id}/`, config);
+                const res = await axios.get(`${process.env.DATABASE_URL}/api/lists/user/${user.id}/`, config);
 
                 setLists(res.data);
                 console.log(res.data);

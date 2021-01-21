@@ -17,7 +17,7 @@ const Explore = ({ checkAuthenticated, load_user, isAuthenticated, user }) => {
                 }
             };
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/lists/`, config);
+                const res = await axios.get(`${process.env.DATABASE_URL}/api/lists/`, config);
 
                 setLists(res.data);
                 console.log(res.data);

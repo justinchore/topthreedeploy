@@ -21,7 +21,7 @@ const ListDetail = (props) => {
                 }
             };
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/lists/${props.match.params.id}/`, config);
+                const res = await axios.get(`${process.env.DATABASE_URL}/api/lists/${props.match.params.id}/`, config);
 
                 setList(res.data);
                 console.log(res.data);
