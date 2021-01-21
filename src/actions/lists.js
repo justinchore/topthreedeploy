@@ -99,7 +99,7 @@ export const delete_list = (list_id) => async dispatch => {
     }
 }
 
-export const update_list = (list_id, list_title, list_entry_1, list_entry_2, list_entry_3, list_entry_1_desc, list_entry_2_desc, list_entry_3_desc, list_author) => async dispatch => {
+export const update_list = (list_id, list_title, list_entry_1, list_entry_1_desc, list_entry_2, list_entry_2_desc, list_entry_3, list_entry_3_desc, list_author) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json',
