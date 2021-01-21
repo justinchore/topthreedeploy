@@ -3,7 +3,6 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../actions/auth';
 import axios from 'axios';
-import env from 'react-dotenv';
 
 const Login = ({ login, isAuthenticated, error }) => {
     const [formData, setFormData] = useState({
@@ -22,7 +21,7 @@ const Login = ({ login, isAuthenticated, error }) => {
 
     const continueWithGoogle = async () => {
         try {
-            const res = await axios.get(`${env.DATABASE_URL}/auth/o/google-oauth2/?redirect_uri=http://localhost:8000`);
+            const res = await axios.get(`${process.env.DATABASE_URL}/auth/o/google-oauth2/?redirect_uri=http://localhost:8000`);
 
             window.location.replace(res.data.authorization_url);
             

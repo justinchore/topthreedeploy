@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { checkAuthenticated , load_user } from '../actions/auth.js';
 import { delete_list, load_list_owner } from '../actions/lists.js';
-import env from 'react-dotenv';
 
 const ListDetail = (props) => {
     const [list, setList] = useState();
@@ -22,7 +21,7 @@ const ListDetail = (props) => {
                 }
             };
             try {
-                const res = await axios.get(`${env.DATABASE_URL}/api/lists/${props.match.params.id}/`, config);
+                const res = await axios.get(`${process.env.DATABASE_URL}/api/lists/${props.match.params.id}/`, config);
 
                 setList(res.data);
                 console.log(res.data);
