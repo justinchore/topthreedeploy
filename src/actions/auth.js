@@ -42,7 +42,7 @@ export const load_user = () => async dispatch => {
             dispatch({
                 type: USER_LOADED_FAIL
             })
-        }
+        };
     } else {
         dispatch({
             type: USER_LOADED_FAIL
