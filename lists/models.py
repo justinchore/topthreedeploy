@@ -13,11 +13,11 @@ class List(models.Model):
         on_delete=models.CASCADE,
     )
     list_entry_1 = models.CharField(max_length=255)
-    list_entry_1_desc = models.TextField()
+    list_entry_1_desc = models.TextField(blank=True)
     list_entry_2 = models.CharField(max_length=255)
-    list_entry_2_desc = models.TextField()
+    list_entry_2_desc = models.TextField(blank=True)
     list_entry_3 = models.CharField(max_length=255)
-    list_entry_3_desc = models.TextField()
+    list_entry_3_desc = models.TextField(blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
