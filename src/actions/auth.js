@@ -260,7 +260,7 @@ export const delete_user = (current_password) => async dispatch => {
     const body = JSON.stringify({"current_password": current_password});
     console.log(body);
     try {
-        const res = await axios.delete(`${process.env.DATABASE_URL/auth/users/me/`, body, config);
+        const res = await axios.delete(`${process.env.DATABASE_URL}/auth/users/me/`, body, config);
         
         dispatch({
             type: USER_DELETE_SUCCESS,
