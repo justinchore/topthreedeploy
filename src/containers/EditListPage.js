@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { create_list } from '../actions/lists';
 import { checkAuthenticated, load_user } from '../actions/auth';
 import { update_list } from '../actions/lists';
+import env from 'react-dotenv';
 import axios from 'axios';
 
 const EditListPage = (props) => {
@@ -39,7 +40,7 @@ const EditListPage = (props) => {
             }
 
             try {
-                const res = await axios.get(`${process.env.DATABASE_URL}/api/lists/${props.match.params.id}/`, config);
+                const res = await axios.get(`${env.DATABASE_URL}/api/lists/${props.match.params.id}/`, config);
                 console.log(res.data);
                 setList(res.data);
                 setFormData({

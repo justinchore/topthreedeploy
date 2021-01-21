@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { checkAuthenticated , load_user } from '../actions/auth.js';
+import env from 'react-dotenv';
 
 const Explore = ({ checkAuthenticated, load_user, isAuthenticated, user }) => {
     const [lists, setLists] = useState([]);
@@ -17,7 +18,7 @@ const Explore = ({ checkAuthenticated, load_user, isAuthenticated, user }) => {
                 }
             };
             try {
-                const res = await axios.get(`${process.env.DATABASE_URL}/api/lists/`, config);
+                const res = await axios.get(`${env.DATABASE_URL}/api/lists/`, config);
 
                 setLists(res.data);
                 console.log(res.data);
